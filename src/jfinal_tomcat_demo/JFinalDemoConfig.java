@@ -1,8 +1,8 @@
 package jfinal_tomcat_demo;
 
-
 import jfinal_tomcat_demo.controllers.HelloController;
 import jfinal_tomcat_demo.controllers.IndexController;
+import jfinal_tomcat_demo.model.User;
 
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -10,6 +10,8 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
 
 public class JFinalDemoConfig extends JFinalConfig {
@@ -31,13 +33,18 @@ public class JFinalDemoConfig extends JFinalConfig {
 	}
 
 	@Override
-	public void configPlugin(Plugins arg0) {
-
+	public void configPlugin(Plugins plugins) {
+		C3p0Plugin c30plugin = new C3p0Plugin("jdbc:mysql://localhost/jfinal",
+				"cd", "cd");
+		plugins.add(c30plugin);
+		ActiveRecordPlugin ac = new ActiveRecordPlugin(c30plugin);
+		plugins.add(ac);
+		ac.addMapping("user", User.class);
 	}
 
 	@Override
 	public void configRoute(Routes routes) {
-		routes.add("/", IndexController.class,"/pages");
+		routes.add("/", IndexController.class, "/pages");
 		routes.add("/hello", HelloController.class);
 	}
 
