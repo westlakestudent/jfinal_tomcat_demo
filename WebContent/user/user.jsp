@@ -15,9 +15,9 @@
 			</div>
 		</div>
 		<div class="main">
-<h1 align="center">User管理&nbsp;&nbsp;</h1>
+<h1 >User管理&nbsp;&nbsp;</h1>
 <a href="/jfinal_tomcat_demo/user/add">创建User</a>
-<div class="table_box">
+<div class="table_box" >
 	<table class="list" border="1">
 		<tbody>
 			<tr>
