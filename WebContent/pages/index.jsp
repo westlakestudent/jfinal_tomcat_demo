@@ -4,8 +4,9 @@
 <html xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<link href="/css/manage.css" media="screen" rel="stylesheet" type="text/css" />
-<script src="/js/jquery-1.4.4.min.js" type="text/javascript" ></script>
+<link href="/css/manage.css" media="screen" rel="stylesheet"
+	type="text/css" />
+<script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <title>Welcome to JFinal world!</title>
 </head>
 <body>
